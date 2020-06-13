@@ -8,6 +8,7 @@ html,
 body {
 	height: 100vh;
 	width: 100vw;
+	overflow: hidden;
 }
 
 %hw {
@@ -15,11 +16,86 @@ body {
 	width: 100%;
 }
 
+@keyframes list {
+	0% {
+		transform: translateX(5vw);
+	}
+
+	100% {
+		transform: translateX(0vw);
+	}
+}
+
+@keyframes listOut {
+	0% {
+		transform: translateX(0vw);
+	}
+
+	100% {
+		transform: translateX(5vw);
+	}
+}
+
+@for $i from 1 through 4 {
+	$colors: #1abc9c, #f1c40f, #e74c3c, #3498db;
+
+	.animated:nth-child(#{$i}) {
+		animation-delay: ($i * 0.2) + s;
+		animation-name: list;
+		animation-duration: 0.5s;
+		animation-fill-mode: both;
+		background: nth($colors, $i);
+	}
+}
+
 #wrap {
 	@extend %hw;
 	overflow: hidden;
-	// background-color: #f5f6fb;
 	background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+#header {
+	div {
+		height: 4vw;
+		width: 4vw;
+		position: absolute;
+		background-color: skyblue;
+		right: -2.5vw;
+		border-radius: 5vw;
+		top: 0rem;
+		margin: 0.2rem;
+		transition: all 0.5s;
+		z-index: 5;
+		&:hover {
+			transform: translateX(-0.8rem);
+		}
+		&:active {
+			transform: scale(0.8);
+		}
+	}
+	ul {
+		z-index: 5;
+		list-style: none;
+		position: absolute;
+		right: 0.2rem;
+		top: 2rem;
+		// z-index: 5;
+		li {
+			font-size: 0.3rem;
+			height: 3.5vw;
+			width: 3.5vw;
+			border-radius: 5vw;
+			margin-top: 2rem;
+			a {
+				text-decoration: none;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: black;
+				@extend %hw;
+			}
+		}
+	}
 }
 
 #nav {
@@ -63,10 +139,10 @@ body {
 			border: none;
 			outline: none;
 		}
-		#nav-input{
+		#nav-input {
 			width: 20%;
 		}
-		.Myinput{
+		.Myinput {
 			width: 60%;
 			text-align: center;
 		}
@@ -111,7 +187,7 @@ body {
 		padding: 2%;
 		transition: all 0.5s;
 		&:hover {
-			transform: translateX(-1%);
+			transform: translateX(-0.5%);
 		}
 	}
 }

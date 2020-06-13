@@ -6,15 +6,91 @@
 html,
 body {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow: hidden; }
 
-#wrap, #nav #nav-bott > div, #nav #nav-bott > div table, #nav #nav-bott > div table tbody, #section div, .table {
+#wrap, #header ul li a, #nav #nav-bott > div, #nav #nav-bott > div table, #nav #nav-bott > div table tbody, #section div, .table {
   height: 100%;
   width: 100%; }
+
+@keyframes list {
+  0% {
+    transform: translateX(5vw); }
+  100% {
+    transform: translateX(0vw); } }
+
+@keyframes listOut {
+  0% {
+    transform: translateX(0vw); }
+  100% {
+    transform: translateX(5vw); } }
+
+.animated:nth-child(1) {
+  animation-delay: 0.2s;
+  animation-name: list;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  background: #1abc9c; }
+
+.animated:nth-child(2) {
+  animation-delay: 0.4s;
+  animation-name: list;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  background: #f1c40f; }
+
+.animated:nth-child(3) {
+  animation-delay: 0.6s;
+  animation-name: list;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  background: #e74c3c; }
+
+.animated:nth-child(4) {
+  animation-delay: 0.8s;
+  animation-name: list;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  background: #3498db; }
 
 #wrap {
   overflow: hidden;
   background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); }
+
+#header div {
+  height: 4vw;
+  width: 4vw;
+  position: absolute;
+  background-color: skyblue;
+  right: -2.5vw;
+  border-radius: 5vw;
+  top: 0rem;
+  margin: 0.2rem;
+  transition: all 0.5s;
+  z-index: 5; }
+  #header div:hover {
+    transform: translateX(-0.8rem); }
+  #header div:active {
+    transform: scale(0.8); }
+
+#header ul {
+  z-index: 5;
+  list-style: none;
+  position: absolute;
+  right: 0.2rem;
+  top: 2rem; }
+  #header ul li {
+    font-size: 0.3rem;
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 5vw;
+    margin-top: 2rem; }
+    #header ul li a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black; }
 
 #nav {
   height: 96%;
@@ -85,7 +161,7 @@ body {
     padding: 2%;
     transition: all 0.5s; }
     #section div:hover {
-      transform: translateX(-1%); }
+      transform: translateX(-0.5%); }
 
 .table {
   margin: auto;

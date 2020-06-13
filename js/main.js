@@ -109,6 +109,20 @@
 		Data_deal.ReTds();
 	});
 
+	document.getElementById("header_butt").addEventListener("click", () => {
+		const ul = document.querySelector("#header ul");
+		console.log(ul.style.display);
+		if (ul.style.display == "none") {
+			ul.style.display = "block";
+		} else {
+			ul.style.animation = "listOut 1s";
+			setTimeout(() => {
+				ul.style.display = "none";
+				ul.style.animation = "";
+			}, 1000);
+		}
+	});
+
 	window.onload = () => {
 		rem();
 	}
