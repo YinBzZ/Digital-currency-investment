@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=,minimum-scale=,maximum-scale=,user-scalable=no" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+		<link rel="stylesheet" type="text/css" href="css/style.min.css"/>
+		<title>数字货币加仓计算</title>
+	</head>
+	<body>
+		<div id="wrap">
+			<header class="header" id="header"></header>
+			<nav class="nav" id="nav">
+				<div id="nav-top">
+					<div>
+						<input class="Myinput" type="number" id="price" value="250" min="1" />
+						<span>价格&emsp;</span>
+					</div>
+					<div>
+						<input class="Myinput" type="number" id="Amount" value="5" min="1" />
+						<span>购买金额&emsp;</span>
+					</div>
+					<div>
+						<input class="Myinput" type="number" id="percentage" value="5" min="1" />
+						<span>网格百分比&emsp;</span>
+					</div>
+					<div>
+						<input class="Myinput" type="number" id="Overweight" value="25" min="1" />
+						<span>加码百分比&emsp;</span>
+					</div>
+					<div>
+						<input class="Myinput" type="number" id="SellMoney" value="300" min="1" />
+						<span>卖出价格&emsp;</span>
+					</div>
+					<div>
+						<input class="Myinput" type="number" id="nav-input" value="10" max="20" min="0" />
+						<span>网格数</span>
+						<input type="checkbox" id="nav-checkbox" value="" />
+						<span>逐格加码</span>
+					</div>
+				</div>
+				<div id="nav-bott">
+					<div>
+						<table border="0" cellspacing="" cellpadding="">
+							<tbody>
+								<tr>
+									<td>所需金额</td>
+									<td id="Amount_required">0</td>
+								</tr>
+								<tr>
+									<td>盈利金额</td>
+									<td id="Profit_amount">0</td>
+								</tr>
+								<tr>
+									<td>盈利比例</td>
+									<td id="Profit_ratio">0%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</nav>
+			<section class="section" id="section">
+				<div>
+					<table class="table" border="">
+						<thead>
+							<th>序号</th>
+							<!-- <th>档位</th> -->
+							<th>买入价格</th>
+							<!-- <th>卖出价格</th> -->
+							<!-- <th>成本</th> -->
+							<th>买入金额</th>
+							<th>买入数量</th>
+							<!-- <th>卖出数量</th> -->
+							<!-- <th>卖出金额</th> -->
+							<th>盈利金额</th>
+							<!-- <th>盈利比例</th> -->
+							<!-- <th>保留数量</th> -->
+							<!-- <th>保留利润</th> -->
+						</thead>
+						<tbody>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="small-grid">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+		<!-- <script src="js/main.js" type="text/javascript" charset="utf-8" defer="defer"></script> -->
+		<script src="js/main.min.js" type="text/javascript" charset="utf-8" defer="defer"></script>
+	</body>
+</html>
