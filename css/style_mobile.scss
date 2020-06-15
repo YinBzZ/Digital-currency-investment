@@ -1,0 +1,47 @@
+@import url('style.css');
+
+#media_nav_butt {
+	display: block;
+	margin: 2%;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 10vw;
+	background-color: skyblue;
+	position: absolute;
+	z-index: 2;
+	box-shadow: black 0px 0px 10px 0px;
+	opacity: 0.5;
+	transition: all 0.1s;
+	&:active {
+		opacity: 1;
+		transform: scale(0.9);
+	}
+}
+
+#nav {
+	position: absolute;
+	top: 8%;
+	left: -100%;
+	width: 60%;
+	height: 90%;
+	transition: left 1s;
+	z-index: 2;
+	&:hover {
+		transform: none;
+	}
+}
+
+#section {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	div {
+		&:hover {
+			transform: none;
+		}
+	}
+}
+
+#header {
+	display: none;
+}

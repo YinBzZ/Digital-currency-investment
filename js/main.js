@@ -100,6 +100,14 @@ document.getElementById("header_butt").addEventListener("click", () => {
 	}
 });
 
+let mediaF = false;
+
+document.getElementById("media_nav_butt").addEventListener("click", () => {
+	const nav = document.getElementById("nav");
+	!mediaF ? nav.style.left = "0%" : nav.style.left = "-100%";
+	!mediaF ? mediaF = true : mediaF = false;
+});
+
 window.onload = () => rem();
 
 window.onresize = () => rem();

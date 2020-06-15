@@ -66,6 +66,9 @@ body {
   border-radius: 5vw;
   top: 0rem;
   margin: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.5s;
   z-index: 5; }
   #header div:hover {
@@ -101,7 +104,7 @@ body {
   float: left;
   background-color: #01b3ff;
   box-shadow: gray 3px 3px 20px 0px;
-  transition: all 1s; }
+  transition: transform 1s; }
   #nav:hover {
     transform: translateX(2%); }
   #nav #nav-top {
@@ -114,7 +117,7 @@ body {
       margin-top: 5%;
       border-radius: 1vw;
       background-color: #ffffff;
-      font-size: 0.3rem;
+      font-size: 0.4rem;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -131,6 +134,7 @@ body {
       width: 20%; }
     #nav #nav-top .Myinput {
       width: 60%;
+      font-size: 0.4rem;
       text-align: center; }
   #nav #nav-bott {
     height: 30%;
@@ -159,7 +163,7 @@ body {
     border-radius: 1vw;
     background-color: #ebebeb;
     padding: 2%;
-    transition: all 0.5s; }
+    transition: transform 0.5s; }
     #section div:hover {
       transform: translateX(-0.5%); }
 
