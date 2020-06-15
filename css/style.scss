@@ -16,6 +16,12 @@ body {
 	width: 100%;
 }
 
+@media screen and (min-width: 500px) {
+	#wrap{
+		font-size: 0.4rem;
+	}
+}
+
 @keyframes list {
 	0% {
 		transform: translateX(5vw);
@@ -105,6 +111,7 @@ body {
 	width: 20%;
 	padding: 2%;
 	margin: 1%;
+	// font-size: 0.4rem;
 	border-radius: 1vw;
 	float: left;
 	background-color: #01b3ff;
@@ -124,7 +131,6 @@ body {
 			margin-top: 5%;
 			border-radius: 1vw;
 			background-color: #ffffff;
-			font-size: 0.4rem;
 			overflow: hidden;
 			display: flex;
 			align-items: center;
@@ -145,7 +151,6 @@ body {
 		}
 		.Myinput {
 			width: 60%;
-			font-size: 0.4rem;
 			text-align: center;
 		}
 	}
@@ -160,7 +165,7 @@ body {
 			table {
 				@extend %hw;
 				tbody {
-					font-size: 0.4rem;
+					// font-size: 0.4rem;
 					@extend %hw;
 					display: flex;
 					flex-direction: column;
@@ -180,7 +185,7 @@ body {
 	height: 100%;
 	width: (100% - 20 - 2);
 	padding: 2%;
-	font-size: 0.5rem;
+	// font-size: 0.5rem;
 	div {
 		@extend %hw;
 		box-shadow: gray 6px 6px 20px 0px;

@@ -13,6 +13,10 @@ body {
   height: 100%;
   width: 100%; }
 
+@media screen and (min-width: 500px) {
+  #wrap {
+    font-size: 0.4rem; } }
+
 @keyframes list {
   0% {
     transform: translateX(5vw); }
@@ -117,7 +121,6 @@ body {
       margin-top: 5%;
       border-radius: 1vw;
       background-color: #ffffff;
-      font-size: 0.4rem;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -134,7 +137,6 @@ body {
       width: 20%; }
     #nav #nav-top .Myinput {
       width: 60%;
-      font-size: 0.4rem;
       text-align: center; }
   #nav #nav-bott {
     height: 30%;
@@ -144,7 +146,6 @@ body {
       border-radius: 1vw;
       background-color: #ffffff; }
       #nav #nav-bott > div table tbody {
-        font-size: 0.4rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around; }
@@ -156,8 +157,7 @@ body {
   float: right;
   height: 100%;
   width: 78%;
-  padding: 2%;
-  font-size: 0.5rem; }
+  padding: 2%; }
   #section div {
     box-shadow: gray 6px 6px 20px 0px;
     border-radius: 1vw;

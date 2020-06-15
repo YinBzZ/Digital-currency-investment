@@ -1,9 +1,12 @@
 @import url("style.css");
+#wrap {
+  font-size: 1rem; }
+
 #media_nav_butt {
   display: block;
   margin: 2%;
-  width: 4rem;
-  height: 4rem;
+  width: 10vw;
+  height: 10vw;
   border-radius: 10vw;
   background-color: skyblue;
   position: absolute;

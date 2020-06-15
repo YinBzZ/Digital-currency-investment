@@ -87,26 +87,33 @@ const Data_deal = {
 		this.clac();
 	}
 }
-document.getElementById("header_butt").addEventListener("click", () => {
-	const ul = document.querySelector("#header ul");
-	if (ul.style.display == "none") {
-		ul.style.display = "block";
-	} else {
-		ul.style.animation = "listOut 1s";
-		setTimeout(() => {
-			ul.style.display = "none";
-			ul.style.animation = "";
-		}, 1000);
-	}
-});
 
 let mediaF = false;
 
-document.getElementById("media_nav_butt").addEventListener("click", () => {
-	const nav = document.getElementById("nav");
-	!mediaF ? nav.style.left = "0%" : nav.style.left = "-100%";
-	!mediaF ? mediaF = true : mediaF = false;
-});
+(event => {
+	document.getElementById("header_butt").addEventListener("click", () => {
+		const ul = document.querySelector("#header ul");
+		if (ul.style.display == "none") {
+			ul.style.display = "block";
+		} else {
+			ul.style.animation = "listOut 1s";
+			setTimeout(() => {
+				ul.style.display = "none";
+				ul.style.animation = "";
+			}, 1000);
+		}
+	}, false);
+
+	document.getElementById("media_nav_butt").addEventListener("touchstart", () => {
+		const nav = document.getElementById("nav");
+		!mediaF ? nav.style.left = "0%" : nav.style.left = "-100%";
+		!mediaF ? mediaF = true : mediaF = false;
+	}, false);
+
+	document.addEventListener("touchmove", event => {
+		event.preventDefault();
+	}, {passive: false});
+})();
 
 window.onload = () => rem();
 
