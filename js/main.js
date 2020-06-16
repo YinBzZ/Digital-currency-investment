@@ -15,31 +15,27 @@ const NumDl = x => Math.floor(x * 100) / 100,
 		document.documentElement.style.fontSize = `${Owidth / 320 * 8}px`;
 	};
 
-let allMoney = 0,
-	profit = 0,
-	ratio = 0,
-	nkF = false;
+let allMoney, profit, ratio, nkF = false;
 
 const Data_deal = {
 	clac() {
-		let _a = Number(inputs[0].value),
-			_b = Number(inputs[1].value),
-			_c = Number(inputs[2].value) / 100,
-			_d = Number(inputs[3].value) / 100,
-			e = Number(inputs[4].value),
-			_f = Number(inputs[5].value),
-			_a1 = _a,
-			_b1 = _b,
-			_g = 0,
-			_e = 0;
+		const ve = () => {
+			const o = new Array;
+			for (let i = 0; i < inputs.length; i++) {
+				o.push(Number(inputs[i].value));
+			}
+			o.push(o[0], o[1], 0, 0);
+			return o;
+		}
 		b.length = 0;
+		let [_a, _b, _c, _d, e, _f, _a1, _b1, _g, _e] = ve();
 		for (let i = 0; i < _f; i++) {
 			_e = _b * (1 - _a / e);
 			allMoney += _b;
 			profit += _e;
 			ratio = _e / _b * 100;
-			_a = _a1 - _a1 * _c * i;
-			nkF ? _b = _b1 + _b1 * _d * i : null;
+			_a = _a1 - _a1 * _c / 100 * i;
+			nkF ? _b = _b1 + _b1 * _d / 100 * i : null;
 			_g = Number(String(_b / _a).replace(/^(.*\..{6}).*$/, "$1"));
 			b.push([i + 1, NumDl(_a), NumDl(_b), _g, NumDl(_e)]);
 		}
@@ -50,16 +46,16 @@ const Data_deal = {
 			inputs[i].addEventListener("blur", () => {
 				allMoney = profit = ratio = 0;
 				this.ReTds();
-			});
+			}, false);
 		}
 		nk.addEventListener("click", function() {
 			this.checked ? nkF = true : nkF = false;
 			Data_deal.ReTds();
-		});
+		}, false);
 	},
 	display() {
 		const _f = inputs[5].value;
-		for (let i = 0; i < 100; i++) {
+		for (let i = 0; i < tds.length; i++) {
 			tds[i].innerHTML = null;
 		}
 		for (let i = 0; i < _f; i++) {
@@ -90,7 +86,7 @@ const Data_deal = {
 
 let mediaF = false;
 
-(event => {
+(() => {
 	document.getElementById("header_butt").addEventListener("click", () => {
 		const ul = document.querySelector("#header ul");
 		if (ul.style.display == "none") {
