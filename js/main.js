@@ -27,7 +27,7 @@ const Data_deal = {
 			o.push(o[0], o[1], 0, 0);
 			return o;
 		}
-		b.length = 0;
+		b.length = allMoney = profit = 0;
 		let [_a, _b, _c, _d, e, _f, _a1, _b1, _g, _e] = ve();
 		for (let i = 0; i < _f; i++) {
 			_e = _b * (1 - _a / e);
@@ -108,7 +108,9 @@ let mediaF = false;
 
 	document.addEventListener("touchmove", event => {
 		event.preventDefault();
-	}, {passive: false});
+	}, {
+		passive: false
+	});
 })();
 
 window.onload = () => rem();
