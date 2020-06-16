@@ -1,34 +1,30 @@
 "use strict";
 const r1 = document.getElementById("Amount_required"), //所需金额
 	r2 = document.getElementById("Profit_amount"), //盈利金额
-	r3 = document.getElementById("Profit_ratio"); //盈利比例
-
-const inputs = document.querySelectorAll(".Myinput"),
+	r3 = document.getElementById("Profit_ratio"), //盈利比例
+	inputs = document.querySelectorAll(".Myinput"),
 	tds = document.querySelectorAll(".small-grid td"),
 	nk = document.getElementById("nav-checkbox"),
 	b = new Array,
-	newTds = new Array;
-
-const NumDl = x => Math.floor(x * 100) / 100,
+	newTds = new Array,
+	NumDl = x => Math.floor(x * 100) / 100,
 	rem = () => {
 		const Owidth = document.documentElement.clientWidth || document.body.clientWidth;
 		document.documentElement.style.fontSize = `${Owidth / 320 * 8}px`;
 	};
 
 let allMoney, profit, ratio, nkF = false;
-
 const Data_deal = {
 	clac() {
-		const ve = () => {
+		let [_a, _b, _c, _d, e, _f, _a1, _b1, _g, _e] = (() => {
 			const o = new Array;
 			for (let i = 0; i < inputs.length; i++) {
 				o.push(Number(inputs[i].value));
 			}
 			o.push(o[0], o[1], 0, 0);
 			return o;
-		}
+		})();
 		b.length = allMoney = profit = 0;
-		let [_a, _b, _c, _d, e, _f, _a1, _b1, _g, _e] = ve();
 		for (let i = 0; i < _f; i++) {
 			_e = _b * (1 - _a / e);
 			allMoney += _b;
@@ -48,15 +44,15 @@ const Data_deal = {
 				this.ReTds();
 			}, false);
 		}
-		nk.addEventListener("click", function() {
-			this.checked ? nkF = true : nkF = false;
-			Data_deal.ReTds();
+		nk.addEventListener("click", target => {
+			target.toElement.checked ? nkF = true : nkF = false;
+			this.ReTds();
 		}, false);
 	},
 	display() {
 		const _f = inputs[5].value;
 		for (let i = 0; i < tds.length; i++) {
-			tds[i].innerHTML = null;
+			tds[i].innerHTML = null
 		}
 		for (let i = 0; i < _f; i++) {
 			for (let _i = 0; _i < 5; _i++) {
@@ -71,13 +67,9 @@ const Data_deal = {
 		let _f = inputs[5].value,
 			x = 0;
 		newTds.length = 0;
-		for (let i = 0; i < _f; i++) {
-			newTds.push([]);
-		}
+		for (let i = 0; i < _f; i++) {newTds.push([])}
 		for (let i = 0; i < _f * 5; i++) {
-			if (i >= 5 && i % 5 == 0) {
-				x++;
-			}
+			if (i >= 5 && i % 5 == 0) {x++}
 			newTds[x].push(tds[i]);
 		}
 		this.clac();
@@ -85,7 +77,6 @@ const Data_deal = {
 }
 
 let mediaF = false;
-
 (() => {
 	document.getElementById("header_butt").addEventListener("click", () => {
 		const ul = document.querySelector("#header ul");
@@ -108,13 +99,9 @@ let mediaF = false;
 
 	document.addEventListener("touchmove", event => {
 		event.preventDefault();
-	}, {
-		passive: false
-	});
+	}, {passive: false});
 })();
 
 window.onload = () => rem();
-
 window.onresize = () => rem();
-
 Data_deal.registration();
